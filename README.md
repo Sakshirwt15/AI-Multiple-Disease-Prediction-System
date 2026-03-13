@@ -1,157 +1,209 @@
-# Multiple Disease Prediction System WebApp
-This repository contains a Multiple Disease Prediction System WebApp developed using Streamlit and hosted on Streamlit Cloud. The web app integrates four different disease prediction systems, each utilizing machine learning models to provide accurate predictions. The diseases covered are:
+# AI Multiple Disease Prediction System 🧑‍⚕️
 
+## Overview
 
-1. Diabetes Prediction System
+The **AI Multiple Disease Prediction System** is a web application that predicts the likelihood of multiple diseases using machine learning models.
+The application is built using **Python and Streamlit**, providing an interactive interface where users can input medical parameters and receive predictions instantly.
 
-2. Heart Disease Prediction System
+This system currently supports prediction for the following diseases:
 
-3. Parkinson Disease Prediction System
+* Diabetes
+* Heart Disease
+* Parkinson’s Disease
+* Breast Cancer
 
-4. Breast Cancer Prediction System
+The goal of this project is to demonstrate how **machine learning models can assist in early disease detection and healthcare decision support**.
 
+---
 
-Table of Contents:
+## Features
 
-* Overview
-* Installation
-* Usage
-* Dataset Description
-* Technologies Used
-* Model Development Process
-* Models Used
-* Model Evaluation
-* Conclusion
-* Deployment
-* Contributing
+* Predicts multiple diseases using trained machine learning models
+* Simple and user-friendly web interface
+* Fast predictions using optimized models
+* Interactive dashboard built with Streamlit
+* Supports multiple medical datasets
 
-# Overview
-This web application allows users to select from four different disease prediction systems and get predictions based on the input features. Each prediction system was developed through extensive data analysis and model selection processes, ensuring high accuracy and reliability.
+---
 
-# Installation
-To run this project locally, please follow these steps:
-1. Clone the repository
-2. Navigate to the project directory
-3. Install the required dependencies
+## Tech Stack
 
+**Programming Language**
 
-# Usage
-To start the Streamlit web app, run the following command in your terminal: streamlit run streamlit_app.py
-This will launch the web app in your default web browser. You can then select the desired disease prediction system from the sidebar and input the required features to get a prediction.
+* Python
 
-# Dataset Description
-1. Diabetes Prediction System
+**Framework**
 
-Description: This dataset contains 768 instances of patient data, with 8 features including glucose levels, blood pressure, and insulin levels, used to predict diabetes.
+* Streamlit
 
-2. Heart Disease Prediction System
+**Machine Learning Libraries**
 
-Description: This dataset includes 1025 instances with 14 features such as age, sex, chest pain type, and resting blood pressure, used to predict the presence of heart disease.
+* Scikit-learn
+* XGBoost
 
-3. Parkinson Disease Prediction System
+**Data Analysis & Visualization**
 
-Description: This dataset has 195 instances with 22 features including average vocal fundamental frequency, measures of variation in fundamental frequency, and measures of variation in amplitude, used to predict Parkinson's disease.
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
 
-4. Breast Cancer Prediction System
+---
 
-Description: This dataset contains 569 instances with 30 features such as radius, texture, perimeter, and area, used to predict breast cancer.
+## Project Structure
 
+```
+Multiple-Disease-Prediction-System
+│
+├── Datasets/                # Datasets used for model training
+├── Models/                  # Trained ML models
+├── notebooks/               # Model development and experimentation
+├── streamlit_app.py         # Main Streamlit application
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
+```
 
-# Technologies Used
-Programming Language: Python
+---
 
-Web Framework: Streamlit
+## Installation
 
-Machine Learning Libraries: Scikit-learn, XGBoost
+To run this project locally:
 
-Data Analysis and Visualization: Pandas, NumPy, Matplotlib, Seaborn
+### 1. Clone the repository
 
+```
+git clone https://github.com/sakshirwt15/AI-Multiple-Disease-Prediction-System.git
+```
 
-# Model Development Process
-Each disease prediction system was developed through the following steps:
+### 2. Navigate to the project directory
 
-1. Importing the Dependencies
+```
+cd AI-Multiple-Disease-Prediction-System
+```
 
+### 3. Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+Run the Streamlit application:
+
+```
+streamlit run streamlit_app.py
+```
+
+After running the command, the application will open in your browser at:
+
+```
+http://localhost:8501
+```
+
+You can then select a disease prediction system from the sidebar and enter the required medical parameters to obtain predictions.
+
+---
+
+## Dataset Description
+
+### Diabetes Prediction
+
+* 768 patient records
+* 8 medical features such as glucose level, blood pressure, BMI, and insulin levels.
+
+### Heart Disease Prediction
+
+* 1025 records
+* 14 attributes including age, sex, chest pain type, cholesterol level, etc.
+
+### Parkinson’s Disease Prediction
+
+* 195 instances
+* 22 biomedical voice measurements used to detect Parkinson’s disease.
+
+### Breast Cancer Prediction
+
+* 569 instances
+* 30 numerical features derived from digitized images of breast mass.
+
+---
+
+## Machine Learning Models Used
+
+Different classification models were trained and evaluated to select the best-performing models.
+
+### Diabetes Prediction
+
+* Support Vector Classifier
+* Logistic Regression
+* Random Forest
+
+### Heart Disease Prediction
+
+* XGBoost
+* Random Forest
+* Logistic Regression
+
+### Parkinson’s Disease Prediction
+
+* K-Nearest Neighbors
+* XGBoost
+* Random Forest
+
+### Breast Cancer Prediction
+
+* Logistic Regression
+* XGBoost
+* K-Nearest Neighbors
+
+---
+
+## Model Development Process
+
+1. Data collection and preprocessing
 2. Exploratory Data Analysis (EDA)
+3. Feature selection
+4. Model training using multiple algorithms
+5. Hyperparameter tuning using GridSearchCV
+6. Model evaluation using accuracy and classification reports
 
-3. Data Preprocessing
-   * Handling missing values
-   * Handling outliers
-   * Label encoding/One-hot encoding
-   * Standardizing the data
+---
 
-4. Model Selection
-   * Selected the most common 5 classification models
-   * Trained each model and checked cross-validation scores
-   * Chose the top 3 models based on cross-validation scores
+## Model Performance
 
-5. Model Building and Evaluation
-   * Selected best features using Recursive Feature Elimination (RFE)
-   * Performed hyperparameter tuning using Grid Search CV
-   * Built the final model with the best hyperparameters and features
-   * Evaluated the model using classification reports
+| Disease       | Best Accuracy |
+| ------------- | ------------- |
+| Diabetes      | 75%           |
+| Heart Disease | 100%          |
+| Parkinson’s   | 100%          |
+| Breast Cancer | 97%           |
 
+---
 
-# Models Used
-The top 3 models for each disease prediction system are as follows:
+## Deployment
 
-1. Diabetes Prediction System
-- Support Vector Classifier: Effective in high-dimensional spaces.
-- Logistic Regression: Simple and effective binary classification model.
-- Random Forest Classifier: Ensemble method that reduces overfitting.
+The application can be deployed using **Streamlit Cloud** or other cloud platforms.
 
-2. Heart Disease Prediction System
-- XGBoost: Boosting algorithm known for high performance.
-- Random Forest Classifier: Robust and handles missing values well.
-- Logistic Regression: Interpretable and performs well with binary classification.
+Example deployment platform:
 
-3. Parkinson Disease Prediction System
-- K-Nearest Neighbour: Simple algorithm that works well with small datasets.
-- XGBoost: Powerful gradient boosting framework.
-- Random Forest Classifier: Effective and reduces overfitting.
+Streamlit Cloud
 
-4. Breast Cancer Prediction System
-- Logistic Regression: Highly interpretable and performs well with binary classification.
-- XGBoost: Excellent performance with complex datasets.
-- K-Nearest Neighbour: Effective with smaller datasets and straightforward implementation.
+---
 
+## Future Improvements
 
-# Model Evaluation
+* Add more disease prediction models
+* Improve UI/UX of the application
+* Integrate real-time patient data
+* Add model explainability features
 
-1. Diabetes Prediction System
-Model	Accuracy
-- Support Vector Classifier	69.480%
-- Logistic Regression	70.129%
-- Random Forest Classifier	75.324%
+---
 
-2. Heart Disease Prediction System
-Model	Accuracy
-- XGBoost	100%
-- Random Forest Classifier	100%
-- Logistic Regression	88.311%%
+## Author
 
-3. Parkinson Disease Prediction System
-Model	Accuracy
-- K-Nearest Neighbour	100%
-- XGBoost	92.307%
-- Random Forest Classifier	94.871%
+**Sakshi Rawat**
 
-4. Breast Cancer Prediction System
-Model	Accuracy
-- Logistic Regression	97.368%
-- XGBoost	97.368%
-- K-Nearest Neighbour	96.491%
-
-# Conclusion
-This Multiple Disease Prediction System WebApp provides an easy-to-use interface for predicting the likelihood of various diseases based on input features. The models used are well-validated and tuned for high accuracy. The system aims to assist in early diagnosis and better decision-making in healthcare.
-
-# Deployment
-The web app is hosted on Streamlit Cloud. You can access it using the following link:
-
-https://ml-project-20-multiple-disease-prediction-system-rzzsjoxpjyj32.streamlit.app/
-
-# Contributing
-Contributions are welcome! If you have any suggestions or improvements, please create a pull request or open an issue.
-
-# Contact
-If you have any questions or suggestions, feel free to contact me at prachetpandav283@gmail.com
+GitHub: https://github.com/sakshirwt15
